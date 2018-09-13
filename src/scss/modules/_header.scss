@@ -1,0 +1,110 @@
+header{
+  background: $Base-blue;
+  height: 386px;
+  nav{
+    height: 102px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 1s;
+    @media (max-width: 780px) {
+      transform: translateX(-530%);
+    }
+    .logo{
+      display: flex;
+      justify-content: space-between;
+      width: 151px;
+      padding-left: 10px;
+      &:after{
+        content: 'fapor';
+        font-size: 26px;
+        font-weight: 400;
+        line-height: 24px;
+        color: #fff;
+        letter-spacing: 1.56px;
+        font-family: OpenSans-Bold;
+        text-transform: uppercase;
+      }
+    }
+    .nav-list{
+      display: flex;
+      margin-right: -56px;
+      @media (max-width: 1485px) {
+        margin-right: 0;
+      }
+      li{
+        margin-left: 16px;
+        position: relative;
+        &:before{
+          content: '';
+          transition: .4s ease;
+          position: absolute;
+          left: 0;
+          bottom: -39px;
+          width: 0;
+          height: 5px;
+          background: $brand-color;
+        }
+        &:hover:before{
+          width: 100%;
+        }
+        &:first-of-type{
+          margin-left: unset;
+        }
+        a{
+          color: #fff;
+          margin: 0 16px;
+          line-height: 24px;
+          letter-spacing: .7px;
+          font-weight: 400;
+          font-size: 14px;
+          font-family: OpenSans-Regular;
+          cursor: pointer;
+          text-transform: uppercase;
+          @media (max-width: 1024px) {
+            cursor: default;
+          }
+        }
+      }
+    }
+  }
+  .header_content{
+    margin-top: 77px;
+    @media (max-width: 780px) {
+      text-align: center;
+    }
+    span{
+      font-family: Raleway-Bold;
+      font-size: 40px;
+      font-weight: 700;
+      line-height: 55px;
+      color: #fff;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.menu-list{
+  display: flex;
+  flex-direction: column;
+  a{
+    color: black;
+    position: relative;
+    transition: 1s;
+    font-family: OpenSans-Regular;
+    &:before{
+      content: '';
+      transition: .4s ease;
+      position: absolute;
+      left: 0;
+      bottom: -3px;
+      width: 0;
+      height: 2px;
+      background: $brand-color;
+    }
+    &:hover:before{
+      width: 100%;
+    }
+  }
+}

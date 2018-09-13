@@ -1,0 +1,93 @@
+.swiper{
+  background: #f7f7f7;
+  padding: 120px 0;
+  .container{
+    @media (max-width: 320px) {
+      padding: 0 9px;
+    }
+    .sw_wrapper{
+      margin: 0 117px;
+      position: relative;
+      top: 220px;
+      transition: 1.6s ease .4s;
+      @media (max-width: 840px) {
+        margin: 0;
+      }
+      .swiper_text{
+        text-align: center;
+        margin-bottom: 94px;
+        position: relative;
+        i{
+          cursor: pointer;
+          font-size: 28px;
+          @media (max-width: 1024px) {
+            cursor: default;
+          }
+        }
+        .fa-angle-left{
+          position: absolute;
+          left: 0;
+          top: 227px;
+          font-size: 2rem;
+          z-index: 2;
+        }
+        .fa-angle-right{
+          position: absolute;
+          right: 0;
+          top: 227px;
+          font-size: 2rem;
+          z-index: 2;
+        }
+        span{
+          text-transform: uppercase;
+          font-family: Raleway-SemiBold;
+          font-size: 24px;
+          line-height: 20.26px;
+          color: #24282f;
+          position: relative;
+          &:before{
+            content: '';
+            position: absolute;
+            background: #24282f;
+            width: 80px;
+            height: 5px;
+            bottom: -32px;
+            left: 108px;
+          }
+        }
+      }
+      .swiper-container{
+        .swiper-wrapper{
+          .swiper-slide{
+            .wrapper_slide{
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              text-align: center;
+              justify-content: space-between;
+              padding: 0 20px;
+              .swiper_img{
+                img{
+                  border-radius: 50%;
+                }
+              }
+              .swiper_content{
+                span{
+                  font-family: OpenSans-Light;
+                  font-size: 14px;
+                  font-weight: 300;
+                  line-height: 24px;
+                  color: black;
+                  letter-spacing: .7px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .active{
+      top: 0;
+    }
+  }
+}

@@ -1,0 +1,104 @@
+main{
+  .wrapper_main{
+    margin: 155px 117px 0 117px;
+    @media (max-width: 1458px) {
+      margin: 155px 0 0 0;
+    }
+    .name_cards{
+      text-align: center;
+      cursor: default;
+      margin-bottom: 66px;
+      span{
+        font-family: Raleway-Bold;
+        font-size: 24px;
+        line-height: 20.26px;
+        letter-spacing: .6px;
+        text-align: center;
+        color: $Base-blue;
+        position: relative;
+        &:before{
+          content: '';
+          transition: .4s ease;
+          position: absolute;
+          left: 0;
+          bottom: -39px;
+          margin-left: 2.6rem;
+          width: 0;
+          height: 4px;
+          background: $brand-color;
+        }
+        &:hover:before{
+          width: 50%;
+        }
+      }
+
+    }
+    .cards_wrapper{
+      display: flex;
+      @media (max-width: 1458px) {
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      @media (max-width: 657px) {
+        align-items: center;
+        flex-direction: column;
+      }
+      .card_wrapper{
+        width: 315px;
+        margin-bottom: 26px;
+        &:nth-child(even){
+          margin: 0 88px 0 102px;
+          @media (max-width: 1458px) {
+            margin: 0 .4rem;
+          }
+          @media (max-width: 977px) {
+            margin: 0 0 0 .4rem;
+          }
+          @media (max-width: 660px) {
+            margin-bottom: 20px;
+          }
+          @media (max-width: 480px) {
+            margin-bottom: 20px;
+          }
+        }
+        .card_img{
+          text-align: center;
+        }
+        .bottom_card{
+          height: 67px;
+          padding: 29px 9px 0 11px;
+          display: flex;
+          justify-content: space-between;
+          .right_col{
+            display: flex;
+          }
+        }
+      }
+    }
+    .main_submit{
+      margin-top: 40px;
+      margin-bottom: 33px;
+      text-align: center;
+      span{
+        text-transform: uppercase;
+        font-family: OpenSans-Regular;
+        font-size: 16px;
+        line-height: 24px;
+        color: $Base-black1;
+        border-radius: 25px;
+        border: 1px solid $Base-black1;
+        padding: 18px 38px;
+        cursor: pointer;
+        transition: .4s ease;
+        &:hover{
+          background: $brand-color;
+          border: 1px solid $brand-color;
+          color: white;
+        }
+        @media (max-width: 1024px) {
+          cursor: default;
+        }
+      }
+    }
+  }
+}

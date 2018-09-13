@@ -1,0 +1,57 @@
+// State class ====
+.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.fixed{
+  position: fixed;
+}
+
+.hidden {
+  display: none;
+}
+
+.standard_border {
+  border: 1px solid rgba(#fff, 0.1);
+}
+
+.name_specialist{
+  font-family: Raleway-Medium;
+  font-size: 16px;
+  font-weight: 500;
+  color: $Base-black;
+  text-transform: uppercase;
+}
+.specialty{
+  font-family: OpenSans-Regular;
+  font-size: 14px;
+  font-weight: 400;
+  color: $brand-color;
+  text-transform: capitalize;
+}
+
+.icon{
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: $Base-grey;
+  position: relative;
+  transition: .4s;
+  margin-left: 6px;
+  &:hover{
+    background: $brand-color;
+  }
+  &:first-of-type{
+    i{
+      left: .8rem;
+    }
+  }
+  i{
+    color: white;
+    position: absolute;
+    top: 0.6rem;
+    left: 0.6rem;
+    font-size: 16px;
+  }
+}

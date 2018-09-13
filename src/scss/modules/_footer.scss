@@ -1,0 +1,89 @@
+footer{
+  padding-top: 79px;
+  padding-bottom: 46px;
+  background: lighten(#2b2f35, 5%);
+  .footer_wrapper{
+    margin: 0 117px;
+    @media (max-width: 1080px) {
+      margin: 0;
+    }
+    .footer_info{
+      display: flex;
+      justify-content: space-between;
+      @media (max-width: 840px) {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .title_footer{
+        font-family: OpenSans-SemiBold;
+        font-size: 14px;
+        line-height: 24px;
+        color: #b5a263;
+        letter-spacing: .7px;
+        text-transform: uppercase;
+        margin-bottom: 30px;
+      }
+      .content_footer{
+        font-family: OpenSans-Regular;
+        font-size: 14px;
+        line-height: 24px;
+        color: #6e7279;
+        letter-spacing: 0.35px;
+      }
+      .about{
+        width: 292px;
+      }
+      .contact_info{
+        width: 202px;
+      }
+      .subscribe{
+        width: 301px;
+        form{
+          display: flex;
+          flex-direction: column;
+          input{
+            outline: none;
+            border: none;
+            font-family: OpenSans-Regular;
+            font-size: 14px;
+            line-height: 24px;
+            letter-spacing: .7px;
+            color: #fff;
+          }
+          input[type='email']{
+            border: 1px solid #6e7279;
+            background: transparent;
+            padding: 12px 9px;
+            margin-bottom: 12px;
+          }
+          input[type='submit']{
+            background: #b5a263;
+            padding: 14px 90px;
+            cursor: pointer;
+            transition: .4s ease;
+            &:hover, &:focus{
+              background: white;
+              color: #b5a263;
+            }
+            @media (max-width: 1024px) {
+              cursor: default;
+            }
+          }
+        }
+        .result{
+          position: relative;
+          top: 1.6rem;
+          font-family: OpenSans-SemiBold;
+          font-size: 14px;
+          line-height: 24px;
+          color: #b5a263;
+          letter-spacing: .7px;
+          text-transform: capitalize;
+          text-align: center;
+        }
+      }
+    }
+
+  }
+}

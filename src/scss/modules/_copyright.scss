@@ -1,0 +1,25 @@
+.copyright{
+  background: #2b2f35;
+  height: 66px;
+  .cop_wrapper{
+    margin: 0 117px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 17px 0;
+    @media (max-width: 1080px) {
+      margin: 0;
+    }
+    .year{
+      span{
+        font-size: 12px;
+        font-family: OpenSans-Regular;
+        color: #6e7279;
+        letter-spacing: .6px;
+      }
+    }
+    .icons{
+      display: flex;
+    }
+  }
+}

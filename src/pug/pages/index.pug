@@ -1,0 +1,35 @@
+doctype html
+html
+    head
+        title FAPOR
+        meta(content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" name="viewport")
+
+        link(rel='stylesheet' href='build/static/font/font-awesome/css/fontawesome-all.min.css')
+        link(href="https://fonts.googleapis.com/css?family=Archivo+Black" rel="stylesheet")
+        link(rel="stylesheet" href="build/static/css/swiper.min.css")
+        link(rel='stylesheet' type='text/css' href='build/static/css/index.css')
+    body
+        .wrapper
+            <div class="menu">
+                <div class="menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <nav class="menu-list">
+                <a href="#">HOME</a>
+                <a href="#">ABOUT</a>
+                <a href="#">SERVICE</a>
+                <a href="#">PORTFOLIO</a>
+                <a href="#">CONTACT</a>
+                </nav>
+            </div>
+            .content
+                include ../modules/header
+                include ../modules/main
+                include ../modules/swipe
+                include ../modules/footer
+                include ../modules/copyright
+    script(type="text/javascript" src='build/static/js/libs.min.js')
+    script(type="text/javascript" src='build/static/js/index.js')
+    script(src="build/static/js/swiper.min.js")
