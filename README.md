@@ -5,9 +5,13 @@
 =====================
 yarn install
 
-**For start project**
+**For dev project**
 =====================
 gulp
+
+**For build project**
+=====================
+gulp build
 
 
 **Happy coding**
