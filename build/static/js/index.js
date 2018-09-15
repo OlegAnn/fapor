@@ -1,1 +1,108 @@
-"use strict";var _createClass=function(){function a(e,n){for(var t=0;t<n.length;t++){var a=n[t];a.enumerable=a.enumerable||!1,a.configurable=!0,"value"in a&&(a.writable=!0),Object.defineProperty(e,a.key,a)}}return function(e,n,t){return n&&a(e.prototype,n),t&&a(e,t),e}}();function _classCallCheck(e,n){if(!(e instanceof n))throw new TypeError("Cannot call a class as a function")}window.mainApp={patternFrontValid:!1,lastNumbers:!0,togglePattern:!1,main:document.querySelector("main")},$(window).on("load",function(){new Swiper($(".swiper-container"),{slidesPerView:1,spaceBetween:30,loop:!0,autoplay:{delay:5e3},navigation:{nextEl:".fa-angle-left",prevEl:".fa-angle-right"}})}),$(window).on("scroll",function(){var e=$(this).scrollTop();300<e&&$(".sw_wrapper").addClass("active"),e<2350&&390<=e?$(".menu-btn span").css("background","black"):$(".menu-btn span").css("background","white")});var Validation=function(){function n(e){_classCallCheck(this,n),this.selector=e}return _createClass(n,[{key:"init",value:function(){this.selector.email.addEventListener("input",function(){$("#email").bind("input",function(){var e=$(".result"),n=$("#email").val();e.text(""),t=n,/.+@.+\..+/i.test(t)?(e.text(n+" is valid :)"),e.css("color","#b5a263")):(e.text(n+" is not valid :("),e.css("color","#BD3F32"));var t;return!1})},!1)}}]),n}(),validation=new Validation(myform);validation.init(),$(".menu-btn").on("click",function(){$(".menu").toggleClass("menu_active"),$(".content").toggleClass("content_active"),$(this).toggleClass("effect_toggle");var e="";e=$(this).hasClass("toggle_nav_active")?"visible":"hidden",$(".mob-nav-list").css("visibility",e)}),window.onload=function(){setTimeout(function(){$(".sw_wrapper").addClass("active")},3e3)},$(window).resize(function(){1024<$(window).width()&&($(".menu").removeClass("menu_active"),$(".content").removeClass("content_active"),$(".menu-btn").removeClass("effect_toggle"))});
+'use strict';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+// global area
+window.mainApp = {
+  patternFrontValid: false,
+  lastNumbers: true,
+  togglePattern: false,
+  main: document.querySelector('main')
+  // init swiper
+};$(window).on('load', function () {
+  var mySwiper = new Swiper($('.swiper-container'), {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    autoplay: {
+      delay: 5000
+    },
+    navigation: {
+      nextEl: '.fa-angle-left',
+      prevEl: '.fa-angle-right'
+    }
+  });
+  $('.menu-btn span').css("background", "white");
+  if ($(window).height() > 1900) {
+    $('.sw_wrapper').addClass('active');
+  }
+});
+// swipe buble animation
+$(window).on('scroll', function () {
+  var currentScrollPosition = $(this).scrollTop();
+  if (currentScrollPosition > 300) {
+    $('.sw_wrapper').addClass('active');
+  }
+  if (currentScrollPosition < 2350 && currentScrollPosition >= 390) {
+    $('.menu-btn span').css("background", "black");
+    $('.menu').css("background", "black");
+    $('.menu-list a').css("color", "white");
+  } else {
+    $('.menu-btn span').css("background", "white");
+    $('.menu').css("background", "white");
+    $('.menu-list a').css("color", "black");
+  }
+});
+
+var Validation = function () {
+  function Validation(selector) {
+    _classCallCheck(this, Validation);
+
+    this.selector = selector;
+  }
+
+  _createClass(Validation, [{
+    key: 'init',
+    value: function init() {
+      this.selector.email.addEventListener('input', check, false);
+      function check() {
+        function validateEmail(email) {
+          var rExp = /.+@.+\..+/i;
+          return rExp.test(email);
+        }
+        function validate() {
+          var $result = $(".result");
+          var email = $("#email").val();
+          $result.text("");
+
+          if (validateEmail(email)) {
+            $result.text(email + " is valid :)");
+            $result.css("color", "#b5a263");
+          } else {
+            $result.text(email + " is not valid :(");
+            $result.css("color", "#BD3F32");
+          }
+          return false;
+        }
+        $("#email").bind("input", validate);
+      }
+    }
+  }]);
+
+  return Validation;
+}();
+// add name form for arguments
+
+
+var validation = new Validation(myform);
+validation.init();
+
+// open mob-nav
+$('.menu-btn').on('click', function () {
+  $('.menu').toggleClass('menu_active');
+  $('.content').toggleClass('content_active');
+  $(this).toggleClass('effect_toggle');
+  var text = '';
+  $(this).hasClass('toggle_nav_active') ? text = 'visible' : text = 'hidden';
+  $('.mob-nav-list').css('visibility', text);
+});
+
+$(window).resize(function () {
+  if ($(window).width() > 1024) {
+    $('.menu').removeClass('menu_active');
+    $('.content').removeClass('content_active');
+    $('.menu-btn').removeClass('effect_toggle');
+  }
+});

@@ -7,19 +7,22 @@ window.mainApp = {
 }
 // init swiper
 $(window).on('load', function () {
-    let mySwiper = new Swiper($('.swiper-container'), {
-        slidesPerView: 1,
-        spaceBetween: 30,
-        loop: true,
-        autoplay: {
-            delay: 5000,
-        },
-        navigation: {
-            nextEl: '.fa-angle-left',
-            prevEl: '.fa-angle-right',
-        },
-    })
-
+  let mySwiper = new Swiper($('.swiper-container'), {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      loop: true,
+      autoplay: {
+          delay: 5000,
+      },
+      navigation: {
+          nextEl: '.fa-angle-left',
+          prevEl: '.fa-angle-right',
+      },
+  })
+  $('.menu-btn span').css("background", "white");
+  if ($(window ).height() > 1900) {
+    $('.sw_wrapper').addClass('active');
+  }
 });
 // swipe buble animation
 $(window).on('scroll', function () {
@@ -29,10 +32,12 @@ $(window).on('scroll', function () {
     }
     if (currentScrollPosition < 2350 && currentScrollPosition >= 390){
       $('.menu-btn span').css("background", "black");
-    } else if (currentScrollPosition < 390) {
-      $('.menu-btn span').css("background", "white");
+      $('.menu').css("background", "black");
+      $('.menu-list a').css("color", "white");
     } else {
       $('.menu-btn span').css("background", "white");
+      $('.menu').css("background", "white");
+      $('.menu-list a').css("color", "black");
     }
 });
 
@@ -78,11 +83,6 @@ $('.menu-btn').on('click',function () {
     $(this).hasClass('toggle_nav_active') ? text = 'visible' : text = 'hidden';
     $('.mob-nav-list').css('visibility', text);
 })
-window.onload = function() {
-  setTimeout(function () {
-    $('.sw_wrapper').addClass('active');
-  }, 3000)
-};
 
 $(window).resize(function(){
   if($( window ).width() > 1024) {
@@ -90,5 +90,4 @@ $(window).resize(function(){
     $('.content').removeClass('content_active');
     $('.menu-btn').removeClass('effect_toggle');
   }
-
 });

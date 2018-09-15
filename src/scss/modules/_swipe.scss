@@ -65,13 +65,17 @@
               align-items: center;
               text-align: center;
               justify-content: space-between;
-              padding: 0 20px;
+              padding: 0 100px;
+              @media (max-width: 680px) {
+                padding: 0 20px;
+              }
               .swiper_img{
                 img{
                   border-radius: 50%;
                 }
               }
               .swiper_content{
+                margin-bottom: 30px;
                 span{
                   font-family: OpenSans-Light;
                   font-size: 14px;

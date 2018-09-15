@@ -20,14 +20,15 @@
   font-family: Raleway-Medium;
   font-size: 16px;
   font-weight: 500;
-  color: $Base-black;
+  color: $brand-color;
   text-transform: uppercase;
+  margin-bottom: 10px;
 }
 .specialty{
   font-family: OpenSans-Regular;
   font-size: 14px;
   font-weight: 400;
-  color: $brand-color;
+  color: $Base-black1;
   text-transform: capitalize;
 }
 
@@ -42,16 +43,12 @@
   &:hover{
     background: $brand-color;
   }
-  &:first-of-type{
-    i{
-      left: .8rem;
-    }
-  }
   i{
     color: white;
     position: absolute;
-    top: 0.6rem;
-    left: 0.6rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     font-size: 16px;
   }
 }

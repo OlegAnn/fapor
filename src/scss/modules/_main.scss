@@ -6,7 +6,6 @@ main{
     }
     .name_cards{
       text-align: center;
-      cursor: default;
       margin-bottom: 66px;
       span{
         font-family: Raleway-Bold;
@@ -16,6 +15,7 @@ main{
         text-align: center;
         color: $Base-blue;
         position: relative;
+        cursor: default;
         &:before{
           content: '';
           transition: .4s ease;
@@ -23,12 +23,9 @@ main{
           left: 0;
           bottom: -39px;
           margin-left: 2.6rem;
-          width: 0;
+          width: 50%;
           height: 4px;
           background: $brand-color;
-        }
-        &:hover:before{
-          width: 50%;
         }
       }
 
@@ -79,7 +76,7 @@ main{
       margin-top: 40px;
       margin-bottom: 33px;
       text-align: center;
-      span{
+      a{
         text-transform: uppercase;
         font-family: OpenSans-Regular;
         font-size: 16px;
@@ -94,9 +91,6 @@ main{
           background: $brand-color;
           border: 1px solid $brand-color;
           color: white;
-        }
-        @media (max-width: 1024px) {
-          cursor: default;
         }
       }
     }
