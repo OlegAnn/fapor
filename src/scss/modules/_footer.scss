@@ -14,6 +14,10 @@ footer{
         flex-direction: column;
         align-items: center;
         text-align: center;
+        padding: 0 100px;
+      }
+      @media (max-width: 480px) {
+        padding: 0;
       }
       .title_footer{
         font-family: OpenSans-SemiBold;
@@ -32,17 +36,26 @@ footer{
         letter-spacing: 0.35px;
       }
       .about{
-        width: 292px;
+        width: 30%;
+        @media (max-width: 841px) {
+          width: 100%;
+        }
       }
       .contact_info{
-        width: 202px;
+        width: 20%;
+        @media (max-width: 841px) {
+          width: 100%;
+        }
       }
       .subscribe{
-        width: 301px;
+        width: 28%;
+        @media (max-width: 841px) {
+          width: 100%;
+        }
         form{
           display: flex;
           flex-direction: column;
-          input{
+          input, button{
             outline: none;
             border: none;
             font-family: OpenSans-Regular;
@@ -50,6 +63,10 @@ footer{
             line-height: 24px;
             letter-spacing: .7px;
             color: #fff;
+            white-space: nowrap;
+            @media (max-width: 841px) {
+              text-align: center;
+            }
           }
           input[type='email']{
             border: 1px solid #6e7279;
@@ -57,9 +74,9 @@ footer{
             padding: 12px 9px;
             margin-bottom: 12px;
           }
-          input[type='submit']{
+          button{
             background: #b5a263;
-            padding: 14px 90px;
+            padding: 14px;
             cursor: pointer;
             transition: .4s ease;
             &:hover, &:focus{
