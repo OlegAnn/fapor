@@ -103,6 +103,7 @@ header{
     transition: 1s;
     font-family: OpenSans-Regular;
     margin-bottom: 5px;
+    cursor: pointer;
     &:before{
       content: '';
       transition: .4s ease;
