@@ -44,15 +44,15 @@
           font-size: 24px;
           line-height: 20.26px;
           color: #24282f;
-          position: relative;
           &:before{
             content: '';
             position: absolute;
             background: #24282f;
-            width: 80px;
+            width: 30%;
             height: 5px;
-            bottom: -32px;
-            left: 108px;
+            left: 50%;
+						top: 180%;
+						transform: translate(-50%, -50%);
           }
         }
       }
