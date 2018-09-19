@@ -30,7 +30,6 @@ $(window).on('scroll', function () {
     if (currentScrollPosition > 300) {
       $('.sw_wrapper').addClass('active');
     }
-    console.log(currentScrollPosition)
     if (currentScrollPosition > 390 && currentScrollPosition < 2350){
       $('.menu-btn span').css("background", "black");
       $('.menu').css("background", "black");
@@ -75,21 +74,12 @@ class Validation {
 let validation = new Validation(myform);
 validation.init();
 
-// open mob-nav
-$('.menu-btn').on('click',function () {
-  $('.menu').toggleClass('menu_active');
-  $('.content').toggleClass('content_active');
-  $(this).toggleClass('effect_toggle');
-    let text = '';
-    $(this).hasClass('toggle_nav_active') ? text = 'visible' : text = 'hidden';
-    $('.mob-nav-list').css('visibility', text);
-})
-
 $(window).resize(function(){
   if($( window ).width() > 1024) {
     $('.menu').removeClass('menu_active');
     $('.content').removeClass('content_active');
     $('.menu-btn').removeClass('effect_toggle');
+    slideout.close();
   }
 });
 
@@ -120,3 +110,33 @@ $('.nav-list li:nth-of-type(3) a, .menu-list a:nth-of-type(3)').on('click touche
     scrollTop: jQuery('.wrapper_main').offset().top
   }, 1500);
 });
+
+
+var slideout = new Slideout({
+  'panel': document.getElementById('panel'),
+  'menu': document.getElementById('menu'),
+  'padding': window.innerWidth * 40 / 100,
+  'side': 'right',
+});
+setTimeout(function () {
+  slideout.on('open', function () {
+    // $('.content').addClass('content_active');
+    document.querySelector('.content').classList.add('content_active')
+    document.querySelector('.menu-btn').classList.add('effect_toggle')
+  })
+},0)
+setTimeout(function () {
+slideout.on('close', function() {
+  $('.content').removeClass('content_active');
+  $('.menu-btn').removeClass('effect_toggle');
+});
+},0)
+// open mob-nav
+$('.menu-btn').on('click',function () {
+  $(this).toggleClass('effect_toggle');
+  $('.content').toggleClass('content_active');
+  setTimeout(function () {
+    slideout.toggle();
+  },320)
+
+})

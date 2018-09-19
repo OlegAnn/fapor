@@ -8,28 +8,30 @@ html
         link(href="https://fonts.googleapis.com/css?family=Archivo+Black" rel="stylesheet")
         link(rel="stylesheet" href="build/static/css/swiper.min.css")
         link(rel='stylesheet' type='text/css' href='build/static/css/index.css')
+        script(type="text/javascript" src='build/static/js/slideout.min.js')
     body
         .wrapper
-            <div class="menu">
-                <div class="menu-btn">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+            <div class="menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu" id="menu">
                 <nav class="menu-list">
-                <a href="#">HOME</a>
-                <a href="#">ABOUT</a>
-                <a href="#">SERVICE</a>
-                <a href="#">PORTFOLIO</a>
-                <a href="#">CONTACT</a>
+                    <a href="#">HOME</a>
+                    <a href="#">ABOUT</a>
+                    <a href="#">SERVICE</a>
+                    <a href="#">PORTFOLIO</a>
+                    <a href="#">CONTACT</a>
                 </nav>
             </div>
-            .content
+            .content#panel
                 include ../modules/header
                 include ../modules/main
                 include ../modules/swipe
                 include ../modules/footer
                 include ../modules/copyright
     script(type="text/javascript" src='build/static/js/libs.min.js')
-    script(type="text/javascript" src='build/static/js/index.js')
     script(src="build/static/js/swiper.min.js")
+    script(type="text/javascript" src='build/static/js/index.js')
+
